@@ -11,7 +11,7 @@ router.get('*', function(req, res, next){
 });
 
 router.get('/', function(req, res){
-	res.render('home/index', {uname: req.session.username});
+	res.render('admin/index', {uname: req.session.username});
 });
 
 
