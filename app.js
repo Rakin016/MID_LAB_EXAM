@@ -5,6 +5,8 @@ var login = require('./controllers/login');
 var logout =require('./controllers/logout');
 var admin =require('./controllers/admin');
 var addEmployee =require('./controllers/addEmployee');
+var allEmpList =require('./controllers/allEmpList');
+
 
 //var fileUpload=require('express-fileupload');
 var app 		= express();
@@ -30,6 +32,7 @@ app.use('/logout',logout);
 app.use('/login',login);
 app.use('/admin',admin);
 app.use('/addEmployee',addEmployee);
+app.use('/allEmpList',allEmpList);
 
 app.get('/', function(req, res){
     res.redirect('/login');

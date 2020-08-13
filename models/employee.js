@@ -38,7 +38,7 @@ module.exports ={
 	insert: function(user, callback){
 		var sql = "insert into employee values(?, ?, ?, ?, ?, ?, ?)";
 
-		db.execute(sql, ['', employee.name, employee.username, employee.password, employee.phone, employee.gender, employee.desgn], function(status){
+		db.execute(sql, ['', employee.name, employee.username, employee.password, employee.phone, employee.gender, employee.Designation], function(status){
 			if(status){
 				callback(true);
 			}else{
@@ -49,7 +49,7 @@ module.exports ={
 
 	update: function(user, callback){
 		var sql = "update employee set name=?, username=?, password=?, phone=?, gender=?, desgn=? where id=?";
-		db.execute(sql, [employee.name, employee.username, employee.password, employee.phone, employee.gender, employee.desgn. employee.id], function(status){
+		db.execute(sql, [employee.name, employee.username, employee.password, employee.phone, employee.gender, employee.Designation. employee.id], function(status){
 			if(status){
 				callback(true);
 			}else{
