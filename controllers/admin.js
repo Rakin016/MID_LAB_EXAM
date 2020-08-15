@@ -79,6 +79,26 @@ router.post('/delete/:id',function (req,res) {
     });
 });
 
+router.get('/search',function (req, res) {
+    if(req.session.username!=null){
+
+            res.render('admin/search');
+
+    }else {
+        res.redirect('/login');
+    }
+});
+
+router.get('/search/:searchString',function (req, res) {
+    if(req.session.username!=null){
+
+        employeeModel.search(req.params.searchString,function (results) {
+            console.log(results);
+            res.send(results);
+        });
+
+    }
+});
 
 
 module.exports = router;
