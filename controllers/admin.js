@@ -56,5 +56,29 @@ router.post('/update/:id',function (req,res) {
     });
 });
 
+router.get('/delete/:id',function (req,res) {
+    if(req.session.username!=null){
+        employeeModel.get(req.params.id,function (result) {
+            console.log(result);
+            res.render('admin/delete',result);
+        });
+    }else {
+        res.redirect('/login');
+    }
+});
+
+router.post('/delete/:id',function (req,res) {
+    var id=req.params.id;
+    employeeModel.delete(id,function(status){
+        if(status){
+            res.redirect('/admin/allEmployeeList');
+        }
+        else{
+            res.send("Server Error");
+        }
+    });
+});
+
+
 
 module.exports = router;

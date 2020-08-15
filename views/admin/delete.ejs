@@ -1,0 +1,44 @@
+<html>
+<head>
+
+</head>
+<body>
+<form method="post" action="/admin/delete/<%= empId %>">
+        <table>
+            <tr>
+                <td>ID</td>
+                <td><%= empId %></td>
+            </tr>
+            <tr>
+                <td>Name</td>
+                <td><%= Name %></td>
+            </tr>
+            <tr>
+                <td>Username</td>
+                <td><%= username %></td>
+            </tr>
+            <tr>
+                <td>Phone</td>
+                <td><%= Phone %></td>
+            </tr>
+            <tr>
+                <td>Gender</td>
+                <td>
+                    <%= gender %>
+                </td>
+            </tr>
+            <tr>
+                <td>Designation</td>
+                <td>
+                    <%= designation %>
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><input type="submit" value="Delete"></td>
+            </tr>
+        </table>
+</form>
+<a href="/logout">Logout</a>
+</body>
+</html>
